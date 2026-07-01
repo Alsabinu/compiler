@@ -1,0 +1,19 @@
+%{
+#include<stdio.h>
+%}
+
+id [a-zA-Z_][a-zA-Z0-9_]*
+
+%%
+
+{id}    printf("Accepted\n");
+.+      printf("Not Accepted\n");
+
+%%
+
+int main()
+{
+    printf("Enter the identifier: ");
+    yylex();
+    return 0;
+}
