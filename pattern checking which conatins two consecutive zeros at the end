@@ -1,0 +1,18 @@
+%{
+#include <stdio.h>
+%}
+
+num (0|1)*00 
+
+%%
+
+{num} printf("Accepted");
+.+    printf("Not Accepted");
+
+%%
+
+void main()
+{
+   printf("Enter the string:");
+   yylex();
+}
